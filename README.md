@@ -85,13 +85,6 @@ UI: http://127.0.0.1:5173 · API health: http://127.0.0.1:8000/health
 
 ---
 
-## Docs
-
-- [Assignment](docs/ASSIGNMENT.md) — case brief  
-- [Write-up](docs/CASE_STUDY_WRITEUP.md) — use case, feasibility, metrics, recommendation & future vision  
-
----
-
 ## Recommendation (v1)
 
 **Fully assisted draft with mandatory human review** — not straight-through processing.
