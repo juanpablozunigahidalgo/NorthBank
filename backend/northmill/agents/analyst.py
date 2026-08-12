@@ -23,6 +23,7 @@ from northmill.config import (
     GROQ_API_KEY,
     GROQ_MODEL,
     USE_BEDROCK,
+    groq_model_cascade,
     resolve_ai_stack,
 )
 from northmill.schema import AdverseMediaSignal, AiAnalysis, AiPromptTrace, ResearchDossier
@@ -33,7 +34,7 @@ SYSTEM_PROMPT = ANALYST_SYSTEM
 def _evidence_pack(dossier: ResearchDossier, media: list[AdverseMediaSignal]) -> dict[str, Any]:
     return {
         "decision_context": {
-            "bank": "Northmill Bank",
+            "bank": "NorthBank",
             "use_case": "B2B partner / merchant first-pass screening for Partnerships",
             "question": (
                 "Connect hard facts with grounded news; separate evident vs non-evident risks; "
@@ -346,10 +347,13 @@ def analyze_dossier_and_sources(
             lambda: _analyze_via_anthropic(pack, model or ANTHROPIC_MODEL, user_message),
         )
     elif provider == "groq" and GROQ_API_KEY:
-        result = _try(
-            "Groq",
-            lambda: _analyze_via_groq(pack, model or GROQ_MODEL, user_message),
-        )
+        for gm in groq_model_cascade():
+            result = _try(
+                f"Groq:{gm}",
+                lambda m=gm: _analyze_via_groq(pack, m, user_message),
+            )
+            if result is not None:
+                break
     elif AI_PROVIDER == "auto":
         if USE_BEDROCK:
             result = _try(
@@ -362,12 +366,23 @@ def analyze_dossier_and_sources(
                 lambda: _analyze_via_anthropic(pack, ANTHROPIC_MODEL, user_message),
             )
         if result is None and GROQ_API_KEY:
-            result = _try(
-                "Groq",
-                lambda: _analyze_via_groq(pack, GROQ_MODEL, user_message),
-            )
+            for gm in groq_model_cascade():
+                result = _try(
+                    f"Groq:{gm}",
+                    lambda m=gm: _analyze_via_groq(pack, m, user_message),
+                )
+                if result is not None:
+                    break
 
     if result is not None:
+        if errors:
+            # Soft note that a cheaper model may have been used after a failure
+            note = f"Model cascade notes: {'; '.join(errors[:3])}"
+            result = result.model_copy(
+                update={
+                    "residual_risks": list(result.residual_risks)[:9] + [note],
+                }
+            )
         return result
 
     analysis = _deterministic_analyst(dossier, media)
@@ -376,7 +391,7 @@ def analyze_dossier_and_sources(
         analysis = analysis.model_copy(
             update={
                 "residual_risks": analysis.residual_risks
-                + [f"LLM provider fallback ({'; '.join(errors)})"]
+                + [f"LLM provider fallback → grounded-rules ({'; '.join(errors[:2])})"]
             }
         )
     return analysis.model_copy(

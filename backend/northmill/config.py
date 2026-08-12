@@ -28,6 +28,25 @@ ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-20241022")
 # Free-tier friendly (https://console.groq.com) — OpenAI-compatible chat API
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "").strip()
 GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+# Cheaper / alternate Groq models if primary hits 429 or fails (comma-separated)
+GROQ_FALLBACK_MODELS = [
+    m.strip()
+    for m in os.getenv(
+        "GROQ_FALLBACK_MODELS",
+        "llama-3.1-8b-instant,llama-3.1-70b-versatile",
+    ).split(",")
+    if m.strip()
+]
+
+
+def groq_model_cascade() -> list[str]:
+    """Primary Groq model then fallbacks (deduped). Ends at rules in the caller."""
+    primary = (AI_MODEL if AI_PROVIDER in {"auto", "groq"} and AI_MODEL else GROQ_MODEL)
+    out: list[str] = []
+    for m in [primary, *GROQ_FALLBACK_MODELS]:
+        if m and m not in out:
+            out.append(m)
+    return out
 
 USE_LIVE_NEWS = os.getenv("USE_LIVE_NEWS", "true").lower() in {"1", "true", "yes"}
 CORS_ORIGINS = os.getenv("CORS_ORIGINS", "*")
@@ -83,6 +102,7 @@ def resolve_ai_stack() -> dict:
         "ai_model": model,
         "connected": connected,
         "ux_label": label,
+        "groq_fallback_models": GROQ_FALLBACK_MODELS if provider == "groq" else [],
         "use_live_news": USE_LIVE_NEWS,
         "llm_may_change_recommendation": False,
         "how_to_connect": {
@@ -96,6 +116,7 @@ def resolve_ai_stack() -> dict:
         },
         "note": (
             "Set AI_PROVIDER=auto|groq|anthropic|bedrock|rules and optional AI_MODEL in backend/.env. "
+            "Groq tries GROQ_MODEL then GROQ_FALLBACK_MODELS, then grounded-rules. "
             "Policy verdict is always rule-based; the model only drafts grounded narrative."
         ),
     }

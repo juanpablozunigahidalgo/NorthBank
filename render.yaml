@@ -15,6 +15,8 @@ services:
         value: "true"
       - key: GROQ_MODEL
         value: llama-3.3-70b-versatile
+      - key: GROQ_FALLBACK_MODELS
+        value: llama-3.1-8b-instant,llama-3.1-70b-versatile
       - key: CORS_ORIGINS
         value: "*"
       - key: GROQ_API_KEY

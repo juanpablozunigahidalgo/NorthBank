@@ -23,6 +23,7 @@ from northmill.config import (
     GROQ_API_KEY,
     GROQ_MODEL,
     USE_BEDROCK,
+    groq_model_cascade,
     resolve_ai_stack,
 )
 from northmill.schema import (
@@ -252,14 +253,22 @@ def generate_final_recommendation(
             )
 
         if provider == "groq" and GROQ_API_KEY:
-            text = _call_groq(FINAL_SYSTEM, user_msg, model or GROQ_MODEL)
-            return _from_llm_json(
-                _parse_json_object(text),
-                dossier,
-                f"final_brief:groq:{model or GROQ_MODEL}",
-                user_message=user_msg,
-                raw_response=text,
-            )
+            last_err: Exception | None = None
+            for gm in groq_model_cascade():
+                try:
+                    text = _call_groq(FINAL_SYSTEM, user_msg, gm)
+                    return _from_llm_json(
+                        _parse_json_object(text),
+                        dossier,
+                        f"final_brief:groq:{gm}",
+                        user_message=user_msg,
+                        raw_response=text,
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    last_err = exc
+                    continue
+            if last_err:
+                pass
     except Exception:  # noqa: BLE001
         pass
 
