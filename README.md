@@ -2,7 +2,8 @@
 
 A first-pass research dossier for **digital banks** that need to screen prospective merchants and business partners faster — without turning risk ownership over to a black-box model.
 
-Live demo: [northbank.onrender.com](https://northbank.onrender.com)
+Live demo: [northbank.onrender.com](https://northbank.onrender.com)  
+Presentation: [Google Slides](https://docs.google.com/presentation/d/1d7r9RzV4AM9B-kEuWIRP_STTzmXZwU7fJ_fBbRjwmNw/edit?usp=sharing)
 
 ---
 
