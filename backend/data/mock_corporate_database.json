@@ -1,0 +1,831 @@
+{
+  "_meta": {
+    "purpose": "Mock deterministic registry for Northmill Partner Research MVP",
+    "disclaimer": "Financial figures and some risk fields are ILLUSTRATIVE mocks for the case study (inspired by Roaring.io / Allabolag shapes). Company names and org numbers refer to real public entities so adverse-media search can be tested. Not for production KYB.",
+    "as_of": "2026-08",
+    "markets": ["SE", "FI", "NO", "PL"],
+    "company_count": 20
+  },
+  "companies": [
+    {
+      "companyId": "5567370431",
+      "basic_information": {
+        "name": "Klarna Bank AB",
+        "country": "SE",
+        "registrationDate": "2005-02-15",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "64190",
+        "legalGroup": "AB Publikt bankaktiebolag",
+        "employeeInterval": "1000-1999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 1,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": { "2025-06": 1 },
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 2100000000, "ebitda_eur": 50000000, "profitability_margin_pct": 2.3 },
+        { "year": 2024, "revenue_eur": 1950000000, "ebitda_eur": -50000000, "profitability_margin_pct": -2.5 },
+        { "year": 2023, "revenue_eur": 1850000000, "ebitda_eur": -100000000, "profitability_margin_pct": -5.4 },
+        { "year": 2022, "revenue_eur": 1550000000, "ebitda_eur": -250000000, "profitability_margin_pct": -16.1 },
+        { "year": 2021, "revenue_eur": 1250000000, "ebitda_eur": -350000000, "profitability_margin_pct": -28.0 }
+      ],
+      "positions": {
+        "ceo": "Sebastian Siemiatkowski",
+        "board_of_directors": ["Michael Moritz", "Mikael Walther"],
+        "auditor": "Ernst & Young AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Sebastian Siemiatkowski"],
+        "parent_company": "Klarna Holding AB",
+        "unusual_ownership_patterns": "VC-backed; founder retains material influence."
+      }
+    },
+    {
+      "companyId": "5590158894",
+      "basic_information": {
+        "name": "Northvolt AB",
+        "country": "SE",
+        "registrationDate": "2015-12-10",
+        "statusCode": "180",
+        "statusDescription": "Rekonstruktion inledd / Reconstruction declared",
+        "industryCode_SNI2025": "27200",
+        "legalGroup": "AB Privat aktiebolag",
+        "employeeInterval": "1000-1999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 2,
+        "boardChangeCount": { "2025-11": 2, "2026-02": 1 },
+        "addressChangeDates": ["2025-10-01"],
+        "legalCount": 3
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 120000000, "ebitda_eur": -950000000, "profitability_margin_pct": -791.6 },
+        { "year": 2024, "revenue_eur": 105000000, "ebitda_eur": -850000000, "profitability_margin_pct": -809.5 },
+        { "year": 2023, "revenue_eur": 85000000, "ebitda_eur": -600000000, "profitability_margin_pct": -705.8 },
+        { "year": 2022, "revenue_eur": 50000000, "ebitda_eur": -400000000, "profitability_margin_pct": -800.0 },
+        { "year": 2021, "revenue_eur": 15000000, "ebitda_eur": -150000000, "profitability_margin_pct": -1000.0 }
+      ],
+      "positions": {
+        "ceo": "Peter Carlsson",
+        "board_of_directors": ["Jim Hagemann Snabe"],
+        "auditor": "PwC AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Volkswagen AG", "Peter Carlsson"],
+        "parent_company": null,
+        "unusual_ownership_patterns": "Complex multi-layered international holding / industrial consortium."
+      }
+    },
+    {
+      "companyId": "5567037485",
+      "basic_information": {
+        "name": "Spotify Technology S.A. (SE Branch)",
+        "country": "SE",
+        "registrationDate": "2006-06-14",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "59200",
+        "legalGroup": "AB Publikt aktiebolag",
+        "employeeInterval": "5000-9999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 15100000000, "ebitda_eur": 120000000, "profitability_margin_pct": 0.8 },
+        { "year": 2024, "revenue_eur": 13247000000, "ebitda_eur": -250000000, "profitability_margin_pct": -1.8 },
+        { "year": 2023, "revenue_eur": 11727000000, "ebitda_eur": -350000000, "profitability_margin_pct": -2.9 },
+        { "year": 2022, "revenue_eur": 9668000000, "ebitda_eur": -40000000, "profitability_margin_pct": -0.4 },
+        { "year": 2021, "revenue_eur": 7880000000, "ebitda_eur": 94000000, "profitability_margin_pct": 1.1 }
+      ],
+      "positions": {
+        "ceo": "Daniel Ek",
+        "board_of_directors": ["Martin Lorentzon", "Christopher Marshall"],
+        "auditor": "Ernst & Young AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Daniel Ek", "Martin Lorentzon"],
+        "parent_company": "Spotify Technology S.A. (Luxembourg)",
+        "unusual_ownership_patterns": "Dual-class / founder voting control via Luxembourg parent."
+      }
+    },
+    {
+      "companyId": "5591602932",
+      "basic_information": {
+        "name": "Voi Technology AB",
+        "country": "SE",
+        "registrationDate": "2018-05-22",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "77390",
+        "legalGroup": "AB Privat aktiebolag",
+        "employeeInterval": "500-999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": { "2025-03": 1 },
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 135000000, "ebitda_eur": 5000000, "profitability_margin_pct": 3.7 },
+        { "year": 2024, "revenue_eur": 120000000, "ebitda_eur": -15000000, "profitability_margin_pct": -12.5 },
+        { "year": 2023, "revenue_eur": 105000000, "ebitda_eur": -25000000, "profitability_margin_pct": -23.8 },
+        { "year": 2022, "revenue_eur": 85000000, "ebitda_eur": -45000000, "profitability_margin_pct": -52.9 },
+        { "year": 2021, "revenue_eur": 45000000, "ebitda_eur": -60000000, "profitability_margin_pct": -133.3 }
+      ],
+      "positions": {
+        "ceo": "Fredrik Hjelm",
+        "board_of_directors": ["Per Brilioth", "Douglas Washburn"],
+        "auditor": "KPMG AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["VNV Global", "Fredrik Hjelm"],
+        "parent_company": null,
+        "unusual_ownership_patterns": null
+      }
+    },
+    {
+      "companyId": "5560427220",
+      "basic_information": {
+        "name": "H & M Hennes & Mauritz AB",
+        "country": "SE",
+        "registrationDate": "1943-01-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "47711",
+        "legalGroup": "AB Publikt aktiebolag",
+        "employeeInterval": "10000+"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 2,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 21800000000, "ebitda_eur": 2700000000, "profitability_margin_pct": 12.3 },
+        { "year": 2024, "revenue_eur": 21000000000, "ebitda_eur": 2500000000, "profitability_margin_pct": 11.9 },
+        { "year": 2023, "revenue_eur": 19500000000, "ebitda_eur": 2200000000, "profitability_margin_pct": 11.2 },
+        { "year": 2022, "revenue_eur": 18200000000, "ebitda_eur": 2000000000, "profitability_margin_pct": 10.9 },
+        { "year": 2021, "revenue_eur": 17500000000, "ebitda_eur": 1800000000, "profitability_margin_pct": 10.2 }
+      ],
+      "positions": {
+        "ceo": "Daniel Ervér",
+        "board_of_directors": ["Karl-Johan Persson", "Stina Bergfors"],
+        "auditor": "Deloitte AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Stefan Persson Family"],
+        "parent_company": null,
+        "unusual_ownership_patterns": "Concentrated family voting control."
+      }
+    },
+    {
+      "companyId": "5560160680",
+      "basic_information": {
+        "name": "Telefonaktiebolaget LM Ericsson",
+        "country": "SE",
+        "registrationDate": "1918-08-18",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "26300",
+        "legalGroup": "AB Publikt aktiebolag",
+        "employeeInterval": "10000+"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 1,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 22100000000, "ebitda_eur": 2600000000, "profitability_margin_pct": 11.7 },
+        { "year": 2024, "revenue_eur": 23500000000, "ebitda_eur": 2800000000, "profitability_margin_pct": 11.9 },
+        { "year": 2023, "revenue_eur": 24800000000, "ebitda_eur": 3100000000, "profitability_margin_pct": 12.5 },
+        { "year": 2022, "revenue_eur": 25200000000, "ebitda_eur": 3400000000, "profitability_margin_pct": 13.4 },
+        { "year": 2021, "revenue_eur": 22000000000, "ebitda_eur": 2900000000, "profitability_margin_pct": 13.1 }
+      ],
+      "positions": {
+        "ceo": "Börje Ekholm",
+        "board_of_directors": ["Jan Carlson", "Helena Stjernholm"],
+        "auditor": "PwC AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Investor AB", "Industrivärden"],
+        "parent_company": null,
+        "unusual_ownership_patterns": null
+      }
+    },
+    {
+      "companyId": "5560125790",
+      "basic_information": {
+        "name": "Volvo Car AB",
+        "country": "SE",
+        "registrationDate": "1927-01-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "29101",
+        "legalGroup": "AB Publikt aktiebolag",
+        "employeeInterval": "10000+"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 36500000000, "ebitda_eur": 4500000000, "profitability_margin_pct": 12.3 },
+        { "year": 2024, "revenue_eur": 35000000000, "ebitda_eur": 4200000000, "profitability_margin_pct": 12.0 },
+        { "year": 2023, "revenue_eur": 31000000000, "ebitda_eur": 3500000000, "profitability_margin_pct": 11.2 },
+        { "year": 2022, "revenue_eur": 28000000000, "ebitda_eur": 3200000000, "profitability_margin_pct": 11.4 },
+        { "year": 2021, "revenue_eur": 25000000000, "ebitda_eur": 2800000000, "profitability_margin_pct": 11.2 }
+      ],
+      "positions": {
+        "ceo": "Jim Rowan",
+        "board_of_directors": ["Li Shufu", "Lone Fønss Schrøder"],
+        "auditor": "Deloitte AB"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Zhejiang Geely Holding Group"],
+        "parent_company": "Geely Sweden Holdings AB",
+        "unusual_ownership_patterns": "Controlled by Chinese industrial group via Swedish holding."
+      }
+    },
+    {
+      "companyId": "FI26258611",
+      "basic_information": {
+        "name": "Wolt Enterprises Oy",
+        "country": "FI",
+        "registrationDate": "2014-10-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "53200",
+        "legalGroup": "Osakeyhtiö (LLC)",
+        "employeeInterval": "1000-1999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 420000000, "ebitda_eur": 10000000, "profitability_margin_pct": 2.3 },
+        { "year": 2024, "revenue_eur": 350000000, "ebitda_eur": -45000000, "profitability_margin_pct": -12.8 },
+        { "year": 2023, "revenue_eur": 270000000, "ebitda_eur": -75000000, "profitability_margin_pct": -27.7 },
+        { "year": 2022, "revenue_eur": 200000000, "ebitda_eur": -90000000, "profitability_margin_pct": -45.0 },
+        { "year": 2021, "revenue_eur": 140000000, "ebitda_eur": -60000000, "profitability_margin_pct": -42.8 }
+      ],
+      "positions": {
+        "ceo": "Miki Kuusi",
+        "board_of_directors": ["Tony Xu"],
+        "auditor": "Ernst & Young Oy"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["DoorDash Inc."],
+        "parent_company": "DoorDash Inc.",
+        "unusual_ownership_patterns": "Wholly owned subsidiary of US public company."
+      }
+    },
+    {
+      "companyId": "FI23365096",
+      "basic_information": {
+        "name": "Supercell Oy",
+        "country": "FI",
+        "registrationDate": "2010-05-14",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "58210",
+        "legalGroup": "Osakeyhtiö (LLC)",
+        "employeeInterval": "200-499"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 1750000000, "ebitda_eur": 550000000, "profitability_margin_pct": 31.4 },
+        { "year": 2024, "revenue_eur": 1800000000, "ebitda_eur": 600000000, "profitability_margin_pct": 33.3 },
+        { "year": 2023, "revenue_eur": 1900000000, "ebitda_eur": 650000000, "profitability_margin_pct": 34.2 },
+        { "year": 2022, "revenue_eur": 1850000000, "ebitda_eur": 700000000, "profitability_margin_pct": 37.8 },
+        { "year": 2021, "revenue_eur": 1650000000, "ebitda_eur": 610000000, "profitability_margin_pct": 36.9 }
+      ],
+      "positions": {
+        "ceo": "Ilkka Paananen",
+        "board_of_directors": ["Martin Lau"],
+        "auditor": "PwC Oy"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Tencent Holdings Ltd."],
+        "parent_company": "Tencent Consortium",
+        "unusual_ownership_patterns": "Majority owned by Chinese conglomerate."
+      }
+    },
+    {
+      "companyId": "FI01120389",
+      "basic_information": {
+        "name": "Nokia Corporation",
+        "country": "FI",
+        "registrationDate": "1865-05-12",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "26300",
+        "legalGroup": "Julkinen Osakeyhtiö (Public)",
+        "employeeInterval": "10000+"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 1,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 21500000000, "ebitda_eur": 2700000000, "profitability_margin_pct": 12.5 },
+        { "year": 2024, "revenue_eur": 22000000000, "ebitda_eur": 2800000000, "profitability_margin_pct": 12.7 },
+        { "year": 2023, "revenue_eur": 23500000000, "ebitda_eur": 3000000000, "profitability_margin_pct": 12.7 },
+        { "year": 2022, "revenue_eur": 24900000000, "ebitda_eur": 3200000000, "profitability_margin_pct": 12.8 },
+        { "year": 2021, "revenue_eur": 22200000000, "ebitda_eur": 2500000000, "profitability_margin_pct": 11.2 }
+      ],
+      "positions": {
+        "ceo": "Pekka Lundmark",
+        "board_of_directors": ["Sari Baldauf"],
+        "auditor": "Deloitte Oy"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Solidium Oy"],
+        "parent_company": null,
+        "unusual_ownership_patterns": "Finnish state holding company among major shareholders."
+      }
+    },
+    {
+      "companyId": "FI18506828",
+      "basic_information": {
+        "name": "Neste Oyj",
+        "country": "FI",
+        "registrationDate": "2004-05-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "19200",
+        "legalGroup": "Julkinen Osakeyhtiö (Public)",
+        "employeeInterval": "5000-9999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 3,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": { "2025-05": 1 },
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 24000000000, "ebitda_eur": 3200000000, "profitability_margin_pct": 13.3 },
+        { "year": 2024, "revenue_eur": 25000000000, "ebitda_eur": 3500000000, "profitability_margin_pct": 14.0 },
+        { "year": 2023, "revenue_eur": 22000000000, "ebitda_eur": 3100000000, "profitability_margin_pct": 14.0 },
+        { "year": 2022, "revenue_eur": 18500000000, "ebitda_eur": 2800000000, "profitability_margin_pct": 15.1 },
+        { "year": 2021, "revenue_eur": 15100000000, "ebitda_eur": 2300000000, "profitability_margin_pct": 15.2 }
+      ],
+      "positions": {
+        "ceo": "Heikki Malinen",
+        "board_of_directors": ["Matti Kähkönen"],
+        "auditor": "KPMG Oy"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Finnish State (Prime Minister's Office)"],
+        "parent_company": null,
+        "unusual_ownership_patterns": "Significant state ownership (PEP exposure via state control)."
+      }
+    },
+    {
+      "companyId": "FI07089683",
+      "basic_information": {
+        "name": "F-Secure Oyj",
+        "country": "FI",
+        "registrationDate": "1988-05-16",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "62010",
+        "legalGroup": "Julkinen Osakeyhtiö (Public)",
+        "employeeInterval": "500-999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 145000000, "ebitda_eur": 25000000, "profitability_margin_pct": 17.2 },
+        { "year": 2024, "revenue_eur": 130000000, "ebitda_eur": 20000000, "profitability_margin_pct": 15.3 },
+        { "year": 2023, "revenue_eur": 115000000, "ebitda_eur": 15000000, "profitability_margin_pct": 13.0 },
+        { "year": 2022, "revenue_eur": 105000000, "ebitda_eur": 12000000, "profitability_margin_pct": 11.4 },
+        { "year": 2021, "revenue_eur": 95000000, "ebitda_eur": 9000000, "profitability_margin_pct": 9.4 }
+      ],
+      "positions": {
+        "ceo": "Timo Laaksonen",
+        "board_of_directors": ["Risto Siilasmaa"],
+        "auditor": "PwC Oy"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Risto Siilasmaa"],
+        "parent_company": null,
+        "unusual_ownership_patterns": null
+      }
+    },
+    {
+      "companyId": "NO918713867",
+      "basic_information": {
+        "name": "Vipps MobilePay AS",
+        "country": "NO",
+        "registrationDate": "2017-06-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "64190",
+        "legalGroup": "Aksjeselskap (LLC)",
+        "employeeInterval": "500-999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": { "2024-11": 2 },
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 210000000, "ebitda_eur": 18000000, "profitability_margin_pct": 8.5 },
+        { "year": 2024, "revenue_eur": 180000000, "ebitda_eur": 12000000, "profitability_margin_pct": 6.6 },
+        { "year": 2023, "revenue_eur": 150000000, "ebitda_eur": 8000000, "profitability_margin_pct": 5.3 },
+        { "year": 2022, "revenue_eur": 110000000, "ebitda_eur": -5000000, "profitability_margin_pct": -4.5 },
+        { "year": 2021, "revenue_eur": 85000000, "ebitda_eur": -15000000, "profitability_margin_pct": -17.6 }
+      ],
+      "positions": {
+        "ceo": "Rune Garborg",
+        "board_of_directors": ["Kjerstin Braathen"],
+        "auditor": "Deloitte AS"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["DNB Bank ASA", "Danske Bank A/S"],
+        "parent_company": "Vipps AS",
+        "unusual_ownership_patterns": "Consortium owned by Nordic banks."
+      }
+    },
+    {
+      "companyId": "NO923609016",
+      "basic_information": {
+        "name": "Equinor ASA",
+        "country": "NO",
+        "registrationDate": "1972-09-18",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "06100",
+        "legalGroup": "Allmennaksjeselskap (Public)",
+        "employeeInterval": "10000+"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 4,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 125000000000, "ebitda_eur": 42000000000, "profitability_margin_pct": 33.6 },
+        { "year": 2024, "revenue_eur": 130000000000, "ebitda_eur": 45000000000, "profitability_margin_pct": 34.6 },
+        { "year": 2023, "revenue_eur": 140000000000, "ebitda_eur": 50000000000, "profitability_margin_pct": 35.7 },
+        { "year": 2022, "revenue_eur": 150000000000, "ebitda_eur": 70000000000, "profitability_margin_pct": 46.6 },
+        { "year": 2021, "revenue_eur": 90000000000, "ebitda_eur": 35000000000, "profitability_margin_pct": 38.8 }
+      ],
+      "positions": {
+        "ceo": "Anders Opedal",
+        "board_of_directors": ["Jon Erik Reinhardsen"],
+        "auditor": "Ernst & Young AS"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Norwegian Ministry of Trade, Industry and Fisheries"],
+        "parent_company": null,
+        "unusual_ownership_patterns": "Majority state-owned (high PEP exposure)."
+      }
+    },
+    {
+      "companyId": "NO919427389",
+      "basic_information": {
+        "name": "Kahoot! AS",
+        "country": "NO",
+        "registrationDate": "2017-09-20",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "62010",
+        "legalGroup": "Aksjeselskap (LLC)",
+        "employeeInterval": "200-499"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": { "2025-01": 2 },
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 175000000, "ebitda_eur": 35000000, "profitability_margin_pct": 20.0 },
+        { "year": 2024, "revenue_eur": 150000000, "ebitda_eur": 25000000, "profitability_margin_pct": 16.6 },
+        { "year": 2023, "revenue_eur": 120000000, "ebitda_eur": 10000000, "profitability_margin_pct": 8.3 },
+        { "year": 2022, "revenue_eur": 85000000, "ebitda_eur": -5000000, "profitability_margin_pct": -5.8 },
+        { "year": 2021, "revenue_eur": 50000000, "ebitda_eur": -15000000, "profitability_margin_pct": -30.0 }
+      ],
+      "positions": {
+        "ceo": "Eilert Hanoa",
+        "board_of_directors": ["Stefan Blom"],
+        "auditor": "Deloitte AS"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Goldman Sachs", "General Atlantic"],
+        "parent_company": "Kangaroo BidCo AS",
+        "unusual_ownership_patterns": "Taken private via PE consortium."
+      }
+    },
+    {
+      "companyId": "NO911364219",
+      "basic_information": {
+        "name": "Oda Norway AS",
+        "country": "NO",
+        "registrationDate": "2013-02-14",
+        "statusCode": "118",
+        "statusDescription": "Konkursansökan / Applied bankruptcy",
+        "industryCode_SNI2025": "47910",
+        "legalGroup": "Aksjeselskap (LLC)",
+        "employeeInterval": "200-499"
+      },
+      "risk_indicators": {
+        "vatReg": false,
+        "fTaxReg": false,
+        "arbAvgReg": false,
+        "missingAuditor": true,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 1,
+        "boardChangeCount": { "2025-09": 2, "2026-03": 1 },
+        "addressChangeDates": ["2025-08-12", "2026-01-20"],
+        "legalCount": 2
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 180000000, "ebitda_eur": -80000000, "profitability_margin_pct": -44.4 },
+        { "year": 2024, "revenue_eur": 260000000, "ebitda_eur": -30000000, "profitability_margin_pct": -11.5 },
+        { "year": 2023, "revenue_eur": 240000000, "ebitda_eur": -50000000, "profitability_margin_pct": -20.8 },
+        { "year": 2022, "revenue_eur": 200000000, "ebitda_eur": -90000000, "profitability_margin_pct": -45.0 },
+        { "year": 2021, "revenue_eur": 150000000, "ebitda_eur": -40000000, "profitability_margin_pct": -26.6 }
+      ],
+      "positions": {
+        "ceo": "Karl Munthe-Kaas",
+        "board_of_directors": ["Jesper Lodahl"],
+        "auditor": "PwC AS"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Kinnevik AB", "SoftBank"],
+        "parent_company": "Oda Group Holding AS",
+        "unusual_ownership_patterns": "VC-heavy ownership; distress status elevates partnership risk."
+      }
+    },
+    {
+      "companyId": "NO982463718",
+      "basic_information": {
+        "name": "Telenor ASA",
+        "country": "NO",
+        "registrationDate": "1855-01-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "61100",
+        "legalGroup": "Allmennaksjeselskap (Public)",
+        "employeeInterval": "10000+"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 2,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 8200000000, "ebitda_eur": 2600000000, "profitability_margin_pct": 31.7 },
+        { "year": 2024, "revenue_eur": 8000000000, "ebitda_eur": 2500000000, "profitability_margin_pct": 31.2 },
+        { "year": 2023, "revenue_eur": 7800000000, "ebitda_eur": 2300000000, "profitability_margin_pct": 29.4 },
+        { "year": 2022, "revenue_eur": 7600000000, "ebitda_eur": 2200000000, "profitability_margin_pct": 28.9 },
+        { "year": 2021, "revenue_eur": 7700000000, "ebitda_eur": 2350000000, "profitability_margin_pct": 30.5 }
+      ],
+      "positions": {
+        "ceo": "Sigve Brekke",
+        "board_of_directors": ["Jens Petter Olsen"],
+        "auditor": "Ernst & Young AS"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Norwegian Ministry of Trade, Industry and Fisheries"],
+        "parent_company": null,
+        "unusual_ownership_patterns": "State-controlled telecom with international exposure."
+      }
+    },
+    {
+      "companyId": "PL0000543759",
+      "basic_information": {
+        "name": "InPost S.A.",
+        "country": "PL",
+        "registrationDate": "1999-11-15",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "53200",
+        "legalGroup": "Spółka Akcyjna (Joint-Stock)",
+        "employeeInterval": "5000-9999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 0
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 2200000000, "ebitda_eur": 620000000, "profitability_margin_pct": 28.1 },
+        { "year": 2024, "revenue_eur": 1800000000, "ebitda_eur": 500000000, "profitability_margin_pct": 27.7 },
+        { "year": 2023, "revenue_eur": 1400000000, "ebitda_eur": 350000000, "profitability_margin_pct": 25.0 },
+        { "year": 2022, "revenue_eur": 1050000000, "ebitda_eur": 240000000, "profitability_margin_pct": 22.8 },
+        { "year": 2021, "revenue_eur": 750000000, "ebitda_eur": 150000000, "profitability_margin_pct": 20.0 }
+      ],
+      "positions": {
+        "ceo": "Rafał Brzoska",
+        "board_of_directors": ["Adam Aleksandrowicz"],
+        "auditor": "PwC Polska"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Rafał Brzoska", "Advent International"],
+        "parent_company": "InPost Group (Luxembourg)",
+        "unusual_ownership_patterns": "Luxembourg holding above Polish operating company."
+      }
+    },
+    {
+      "companyId": "PL0000006865",
+      "basic_information": {
+        "name": "CD Projekt S.A.",
+        "country": "PL",
+        "registrationDate": "1994-05-01",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "58210",
+        "legalGroup": "Spółka Akcyjna (Joint-Stock)",
+        "employeeInterval": "1000-1999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": {},
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 310000000, "ebitda_eur": 110000000, "profitability_margin_pct": 35.4 },
+        { "year": 2024, "revenue_eur": 250000000, "ebitda_eur": 85000000, "profitability_margin_pct": 34.0 },
+        { "year": 2023, "revenue_eur": 210000000, "ebitda_eur": 60000000, "profitability_margin_pct": 28.5 },
+        { "year": 2022, "revenue_eur": 180000000, "ebitda_eur": 45000000, "profitability_margin_pct": 25.0 },
+        { "year": 2021, "revenue_eur": 200000000, "ebitda_eur": 65000000, "profitability_margin_pct": 32.5 }
+      ],
+      "positions": {
+        "ceo": "Michał Nowakowski",
+        "board_of_directors": ["Adam Kiciński", "Piotr Nielubowicz"],
+        "auditor": "Grant Thornton Polska"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Marcin Iwiński", "Michał Kiciński"],
+        "parent_company": null,
+        "unusual_ownership_patterns": null
+      }
+    },
+    {
+      "companyId": "PL0000858925",
+      "basic_information": {
+        "name": "Allegro sp. z o.o.",
+        "country": "PL",
+        "registrationDate": "1999-08-14",
+        "statusCode": "100",
+        "statusDescription": "Aktivt / Active",
+        "industryCode_SNI2025": "47910",
+        "legalGroup": "Spółka z ograniczoną odpowiedzialnością (LLC)",
+        "employeeInterval": "5000-9999"
+      },
+      "risk_indicators": {
+        "vatReg": true,
+        "fTaxReg": true,
+        "arbAvgReg": true,
+        "missingAuditor": false,
+        "pepCount": 0,
+        "connectedBankruptcyCompanies": 0,
+        "boardChangeCount": { "2024-08": 1 },
+        "addressChangeDates": [],
+        "legalCount": 1
+      },
+      "financial_statements_history": [
+        { "year": 2025, "revenue_eur": 2400000000, "ebitda_eur": 520000000, "profitability_margin_pct": 21.6 },
+        { "year": 2024, "revenue_eur": 2100000000, "ebitda_eur": 450000000, "profitability_margin_pct": 21.4 },
+        { "year": 2023, "revenue_eur": 1800000000, "ebitda_eur": 380000000, "profitability_margin_pct": 21.1 },
+        { "year": 2022, "revenue_eur": 1550000000, "ebitda_eur": 320000000, "profitability_margin_pct": 20.6 },
+        { "year": 2021, "revenue_eur": 1200000000, "ebitda_eur": 230000000, "profitability_margin_pct": 19.1 }
+      ],
+      "positions": {
+        "ceo": "Roy Perticucci",
+        "board_of_directors": ["Jon Eastick"],
+        "auditor": "KPMG Polska"
+      },
+      "corporate_relations": {
+        "ultimate_beneficial_owners": ["Cinven", "Permira", "Mid Europa Partners"],
+        "parent_company": "Allegro.eu S.A. (Luxembourg)",
+        "unusual_ownership_patterns": "Luxembourg-registered holding company operating in Poland."
+      }
+    }
+  ]
+}

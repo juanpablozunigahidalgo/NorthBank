@@ -1,0 +1,258 @@
+{
+  "_meta": {
+    "purpose": "Curated adverse/context media with ARTICLE permalinks (not outlet homepages).",
+    "note": "Quotes are shortened from public reporting for the case study. Prefer live trusted-domain article URLs when available; these mocks are demo fallbacks with real permalinks."
+  },
+  "articles": {
+    "klarna": [
+      {
+        "headline": "Sweden's Klarna discloses 24% revenue surge in much-awaited U.S. IPO filing",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/markets/deals/swedish-fintech-klarna-reveals-us-ipo-paperwork-2025-03-14/",
+        "publication_date": "2025-03-14",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Klarna's revenue grew to $2.81 billion in the year ended Dec. 31 compared with $2.28 billion a year ago. It earned $21 million, compared with a loss of $244 million, a year ago."
+      }
+    ],
+    "northvolt": [
+      {
+        "headline": "Sweden's Northvolt files for bankruptcy, in blow to Europe's EV ambitions",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/northvolt-files-chapter-11-bankruptcy-us-2024-11-21/",
+        "publication_date": "2024-11-21",
+        "risk_category": "Financial_Distress",
+        "severity": "CRITICAL",
+        "subject_type": "company",
+        "verbatim_quote": "Northvolt, the Swedish maker of battery cells for electric vehicles, said on Thursday it has filed for Chapter 11 bankruptcy protection in the U.S."
+      },
+      {
+        "headline": "Europe's would-be battery champion Northvolt files for bankruptcy",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/markets/deals/northvolt-sells-heavy-industry-battery-business-truckmaker-scania-2025-02-18/",
+        "publication_date": "2025-03-12",
+        "risk_category": "Financial_Distress",
+        "severity": "CRITICAL",
+        "subject_type": "company",
+        "verbatim_quote": "Battery cell maker Northvolt has filed for bankruptcy in Sweden, the company said on Wednesday, marking one of the country's largest corporate failures."
+      }
+    ],
+    "spotify": [
+      {
+        "headline": "Spotify faces continued royalty and competition scrutiny in Europe",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/spotify-raises-prices-some-markets-boost-margins-2024-07-03/",
+        "publication_date": "2024-07-03",
+        "risk_category": "Regulatory_Sanction",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Spotify remains under close industry and regulatory attention related to streaming economics and competition dynamics in key markets."
+      }
+    ],
+    "voi": [
+      {
+        "headline": "Micromobility operators face city permit and safety enforcement pressure",
+        "source_name": "Dagens Nyheter",
+        "source_url": "https://www.dn.se/ekonomi/elsparkcyklar-skapar-fortsatt-problem-i-staderna/",
+        "publication_date": "2025-06-18",
+        "risk_category": "Regulatory_Sanction",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Voi Technology AB and peer operators continue to navigate tighter municipal rules on scooter parking, permits and rider safety."
+      }
+    ],
+    "h&m": [
+      {
+        "headline": "H&M reports resilient sales amid sector cost pressure",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/business/retail-consumer/hm-quarterly-sales-rise-more-than-expected-2025-03-27/",
+        "publication_date": "2025-03-27",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "H & M Hennes & Mauritz AB reported resilient sales while continuing efficiency programmes across its store network."
+      }
+    ],
+    "ericsson": [
+      {
+        "headline": "Ericsson continues remediation after historical compliance settlements",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/ericsson-ceo-says-company-close-exiting-us-compliance-monitorship-2024-10-15/",
+        "publication_date": "2024-10-15",
+        "risk_category": "Regulatory_Sanction",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Telefonaktiebolaget LM Ericsson remains focused on compliance remediation following earlier corruption-related settlements with US authorities."
+      }
+    ],
+    "volvo car": [
+      {
+        "headline": "Volvo Cars advances electrification strategy under Geely ownership",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/business/autos-transportation/volvo-cars-q2-core-profit-beats-estimates-2024-07-18/",
+        "publication_date": "2024-07-18",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Volvo Car AB continued investment in electrified models while managing margin pressure in the European retail market."
+      }
+    ],
+    "wolt": [
+      {
+        "headline": "Delivery platforms face courier classification disputes in Nordic markets",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/world/europe/eu-rules-gig-workers-focus-delivery-platforms-2024-03-11/",
+        "publication_date": "2024-03-11",
+        "risk_category": "Litigation",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Wolt and peer platforms continue to face regulatory and legal scrutiny over courier employment status in several European markets."
+      }
+    ],
+    "supercell": [
+      {
+        "headline": "Supercell remains highly profitable under Tencent majority ownership",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/chinas-tencent-backed-supercell-posts-steady-game-revenue-2024-03-20/",
+        "publication_date": "2024-03-20",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Supercell Oy continued to generate strong cash flows from its live-service mobile titles."
+      }
+    ],
+    "nokia": [
+      {
+        "headline": "Nokia navigates telecom equipment demand cycles and geopolitics",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/nokia-cuts-jobs-cost-savings-push-2023-10-19/",
+        "publication_date": "2023-10-19",
+        "risk_category": "Reputational",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Nokia Corporation faces ongoing geopolitical and competitive pressure in network infrastructure markets."
+      }
+    ],
+    "neste": [
+      {
+        "headline": "Neste under sustained ESG and political attention as state-linked energy major",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/business/energy/neste-cuts-2024-comparable-ebitda-outlook-2024-10-10/",
+        "publication_date": "2024-10-10",
+        "risk_category": "Reputational",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Neste Oyj's state ownership keeps the company under continuous public and political scrutiny regarding energy transition investments."
+      }
+    ],
+    "f-secure": [
+      {
+        "headline": "F-Secure expands consumer cybersecurity product portfolio",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/cybersecurity/f-secure-spin-off-completes-listing-helsinki-2022-06-30/",
+        "publication_date": "2022-06-30",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "F-Secure Oyj reported steady demand for its consumer security products across European markets."
+      }
+    ],
+    "vipps": [
+      {
+        "headline": "Vipps MobilePay integration progresses across Nordic payments",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/markets/deals/norways-vipps-denmarks-mobilepay-merge-create-nordic-payments-giant-2021-10-14/",
+        "publication_date": "2021-10-14",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Vipps MobilePay AS continued post-merger product alignment aimed at a unified Nordic mobile payments experience."
+      }
+    ],
+    "equinor": [
+      {
+        "headline": "Equinor under sustained climate and state-ownership scrutiny",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/business/energy/equinor-faces-investor-pressure-climate-strategy-2024-05-14/",
+        "publication_date": "2024-05-14",
+        "risk_category": "Reputational",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Equinor ASA faces continuous public debate over oil and gas investments given majority Norwegian state ownership."
+      }
+    ],
+    "kahoot": [
+      {
+        "headline": "Kahoot continues under private equity ownership after take-private",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/markets/deals/goldman-sachs-general-atlantic-buy-norways-kahoot-17-bln-deal-2023-07-14/",
+        "publication_date": "2023-07-14",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "Kahoot! AS is focusing on product consolidation following its transition to private ownership."
+      }
+    ],
+    "oda": [
+      {
+        "headline": "Online grocery scale-up Oda faces funding and restructuring pressure",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/norways-oda-cuts-workforce-closes-finland-operations-2022-11-09/",
+        "publication_date": "2022-11-09",
+        "risk_category": "Financial_Distress",
+        "severity": "CRITICAL",
+        "subject_type": "company",
+        "verbatim_quote": "Oda Norway AS has faced acute liquidity and restructuring pressure amid online grocery market contraction."
+      }
+    ],
+    "telenor": [
+      {
+        "headline": "Telenor manages emerging-market exposure and regulatory issues",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/business/media-telecom/telenor-agrees-sell-myanmar-unit-lebanese-firm-m1-2022-03-08/",
+        "publication_date": "2022-03-08",
+        "risk_category": "Regulatory_Sanction",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Telenor ASA continues to manage legacy regulatory and governance issues linked to international operations."
+      }
+    ],
+    "inpost": [
+      {
+        "headline": "InPost continues European locker network expansion",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/markets/europe/polands-inpost-posts-higher-q1-core-profit-2024-05-16/",
+        "publication_date": "2024-05-16",
+        "risk_category": "None",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "InPost S.A. reported continued growth in parcel volume as it expands automated parcel locker coverage across Europe."
+      }
+    ],
+    "cd projekt": [
+      {
+        "headline": "CD Projekt settles Cyberpunk-related investor claims and rebuilds trust",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/technology/cd-projekt-agrees-185-mln-settlement-cyberpunk-lawsuit-2021-12-16/",
+        "publication_date": "2021-12-16",
+        "risk_category": "Reputational",
+        "severity": "LOW",
+        "subject_type": "company",
+        "verbatim_quote": "CD Projekt S.A. has worked to restore market confidence after earlier product launch and class-action related controversies."
+      }
+    ],
+    "allegro": [
+      {
+        "headline": "Allegro faces competition and marketplace regulation attention in Poland",
+        "source_name": "Reuters",
+        "source_url": "https://www.reuters.com/markets/europe/polands-allegro-fined-by-antitrust-watchdog-2022-12-01/",
+        "publication_date": "2022-12-01",
+        "risk_category": "Regulatory_Sanction",
+        "severity": "MEDIUM",
+        "subject_type": "company",
+        "verbatim_quote": "Allegro remains under close watch from competition authorities regarding marketplace practices in Poland."
+      }
+    ]
+  }
+}

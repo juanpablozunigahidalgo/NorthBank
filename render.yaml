@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: northmill-partner-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: AI_PROVIDER
+        value: auto
+      - key: USE_BEDROCK
+        value: "false"
+      - key: USE_LIVE_NEWS
+        value: "true"
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: GROQ_API_KEY
+        sync: false
+      - key: MAX_COMPANY_EXTERNALITY_QUERIES
+        value: "10"
+      - key: MAX_PERSON_EXTERNALITY_QUERIES
+        value: "8"
+      - key: MAX_PERSON_EXTERNALITY_PEOPLE
+        value: "1"
+      - key: MEDIA_SEARCH_WORKERS
+        value: "4"
+      - key: MEDIA_TOP_N
+        value: "12"
