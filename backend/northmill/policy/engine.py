@@ -1,5 +1,5 @@
 """
-Deterministic Northmill partnership risk policy.
+Deterministic NorthBank partnership risk policy.
 
 IMPORTANT (anti-hallucination):
 - Recommendation is computed ONLY from structured registry / bureau / media evidence.
@@ -13,6 +13,9 @@ from northmill.schema import AdverseMediaSignal, RiskDecision
 
 # Roaring-style status codes that block commercial progress
 ESCALATE_STATUS_CODES = {"118", "180", "103", "111", "132", "291"}
+
+# Pattern of serious press required before media-based reject (one article is not enough)
+SERIOUS_MEDIA_REJECT_MIN = 3
 
 POLICY_RULES: list[dict] = [
     {
@@ -47,9 +50,15 @@ POLICY_RULES: list[dict] = [
     },
     {
         "id": "R6_CRITICAL_ADVERSE_MEDIA",
-        "if": "trusted adverse media severity in {HIGH,CRITICAL} and category != None",
+        "if": (
+            f"count(trusted adverse media severity in {{HIGH,CRITICAL}} "
+            f"and category != None) >= {SERIOUS_MEDIA_REJECT_MIN}"
+        ),
         "then": "REJECTED",
-        "why": "Grounded serious adverse press — reject.",
+        "why": (
+            "Repeated serious adverse press (several grounded HIGH/CRITICAL hits) — "
+            "reject. A single article is not enough."
+        ),
     },
     {
         "id": "R7_CREDITSAFE_LOW",
@@ -58,16 +67,23 @@ POLICY_RULES: list[dict] = [
         "why": "Mid credit / elevated PD — grey zone; compliance judgment.",
     },
     {
-        "id": "R8_PEP",
-        "if": "pepCount > 0",
+        "id": "R8_PEP_WITH_ADVERSE_CONDUCT",
+        "if": "pepCount > 0 AND grounded adverse media (category != None) exists",
         "then": "ESCALATE_TO_COMPLIANCE",
-        "why": "PEP exposure — not automatic reject; compliance must clear.",
+        "why": (
+            "PEP status alone is not a fail — escalate only when PEP coincides with "
+            "grounded adverse conduct signals in the news pack."
+        ),
     },
     {
-        "id": "R9_MEDIUM_MEDIA",
-        "if": "trusted adverse media severity == MEDIUM",
+        "id": "R9_MATERIAL_MEDIA",
+        "if": (
+            "trusted adverse media severity == MEDIUM, OR "
+            f"1..{SERIOUS_MEDIA_REJECT_MIN - 1} HIGH/CRITICAL hits "
+            "(below reject threshold)"
+        ),
         "then": "ESCALATE_TO_COMPLIANCE",
-        "why": "Material but non-critical press — grey zone for compliance.",
+        "why": "Material press pattern — grey zone for compliance (not yet a reject cluster).",
     },
     {
         "id": "R10_DEFAULT",
@@ -150,32 +166,60 @@ def evaluate_hard_triggers(
         )
         fired.append("R5_CONNECTED_BANKRUPTCIES")
 
-    critical_media = [
+    serious_media = [
         m
         for m in adverse_media
         if m.severity in ("HIGH", "CRITICAL") and m.risk_category != "None"
     ]
-    for m in critical_media:
-        triggers.append(f"[R6] Adverse media [{m.severity}/{m.subject_type}]: {m.headline}")
+    adverse_any = [m for m in adverse_media if m.risk_category != "None"]
+    medium_media = [
+        m for m in adverse_media if m.severity == "MEDIUM" and m.risk_category != "None"
+    ]
+
+    if len(serious_media) >= SERIOUS_MEDIA_REJECT_MIN:
+        triggers.append(
+            f"[R6] Serious adverse media cluster: {len(serious_media)} HIGH/CRITICAL "
+            f"grounded hits (threshold>={SERIOUS_MEDIA_REJECT_MIN})"
+        )
+        for m in serious_media[:5]:
+            triggers.append(
+                f"[R6] · [{m.severity}/{m.subject_type}]: {m.headline}"
+            )
         fired.append("R6_CRITICAL_ADVERSE_MEDIA")
 
     if 40 <= cs_score < 60 and "R4_CREDITSAFE_VERY_LOW" not in fired:
-        triggers.append(f"[R7] Creditsafe MOCK score={cs_score} band={cs_band} - elevated risk")
+        triggers.append(
+            f"[R7] Creditsafe MOCK score={cs_score} band={cs_band} - elevated risk"
+        )
         fired.append("R7_CREDITSAFE_LOW")
 
     pep = int(risk.get("pepCount") or 0)
     if pep > 0:
-        triggers.append(
-            f"[R8] pepCount={pep} - PEP exposure (not approved until cleared)"
+        # PEP alone is not a fail — note it; escalate only with adverse conduct evidence.
+        unsure.append(
+            f"PEP indicator pepCount={pep}: status alone is not a reject/escalate; "
+            "watch for grounded adverse conduct in the news pack."
         )
-        fired.append("R8_PEP")
+        if adverse_any:
+            triggers.append(
+                f"[R8] pepCount={pep} + grounded adverse media "
+                f"({len(adverse_any)} hit(s)) — PEP with conduct signals"
+            )
+            fired.append("R8_PEP_WITH_ADVERSE_CONDUCT")
 
-    medium_media = [
-        m for m in adverse_media if m.severity == "MEDIUM" and m.risk_category != "None"
-    ]
-    for m in medium_media:
-        triggers.append(f"[R9] Adverse media [MEDIUM/{m.subject_type}]: {m.headline}")
-        fired.append("R9_MEDIUM_MEDIA")
+    if "R6_CRITICAL_ADVERSE_MEDIA" not in fired:
+        sparse_serious = 0 < len(serious_media) < SERIOUS_MEDIA_REJECT_MIN
+        if medium_media or sparse_serious:
+            triggers.append(
+                f"[R9] Material media grey zone: MEDIUM={len(medium_media)}, "
+                f"HIGH/CRITICAL={len(serious_media)} "
+                f"(reject needs >={SERIOUS_MEDIA_REJECT_MIN} serious hits)"
+            )
+            for m in [*serious_media, *medium_media][:4]:
+                triggers.append(
+                    f"[R9] · [{m.severity}/{m.subject_type}]: {m.headline}"
+                )
+            fired.append("R9_MATERIAL_MEDIA")
 
     reject_ids = {
         "R1_STATUS_CRITICAL",
@@ -185,13 +229,15 @@ def evaluate_hard_triggers(
         "R5_CONNECTED_BANKRUPTCIES",
         "R6_CRITICAL_ADVERSE_MEDIA",
     }
-    escalate_ids = {"R7_CREDITSAFE_LOW", "R8_PEP", "R9_MEDIUM_MEDIA"}
+    escalate_ids = {
+        "R7_CREDITSAFE_LOW",
+        "R8_PEP_WITH_ADVERSE_CONDUCT",
+        "R9_MATERIAL_MEDIA",
+    }
 
     if any(r in reject_ids for r in fired):
         decision: RiskDecision = "REJECTED"
-    elif any(r in escalate_ids for r in fired) or (
-        triggers and not any(r in reject_ids for r in fired)
-    ):
+    elif any(r in escalate_ids for r in fired):
         decision = "ESCALATE_TO_COMPLIANCE"
     else:
         decision = "APPROVED"
@@ -203,16 +249,17 @@ def evaluate_hard_triggers(
 
 def get_policy_rules_document() -> dict:
     return {
-        "version": "1.2",
+        "version": "1.3",
         "human_in_the_loop": True,
         "llm_may_change_recommendation": False,
         "outputs": ["APPROVED", "ESCALATE_TO_COMPLIANCE", "REJECTED"],
         "logic_summary": (
             "Classification is 100% DETERMINISTIC: pure numeric thresholds "
-            "(credit score/band, pepCount, connected bankruptcies, etc.) and pure "
-            "if→then criteria (status codes, VAT validity, media severity). "
-            "The LLM never computes or changes Approved / Escalate / Rejected — "
-            "it only explains connections between hard facts and grounded news."
+            "(credit score/band, connected bankruptcies, serious-media count, etc.) "
+            "and pure if→then criteria (status codes, VAT validity). "
+            "PEP alone does not escalate — only PEP with grounded adverse conduct. "
+            "Media reject needs a cluster of serious articles, not a single hit. "
+            "The LLM never computes or changes Approved / Escalate / Rejected."
         ),
         "future_agents": (
             "Agents may call MCP tools and propose drafts; commercial approval stays human."

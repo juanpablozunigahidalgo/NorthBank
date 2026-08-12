@@ -53,12 +53,12 @@ export default function CriteriaPage() {
               <strong>Approved</strong> — clean first-pass; no reject/escalate rules
             </li>
             <li>
-              <strong>Escalate to compliance</strong> — grey zone (PEP, mid credit,
-              medium news)
+              <strong>Escalate to compliance</strong> — grey zone (mid credit, material
+              news, or PEP <em>with</em> adverse conduct — PEP alone is not enough)
             </li>
             <li>
               <strong>Rejected</strong> — hard fail (bankruptcy/reconstruction, invalid
-              VAT, very weak credit, critical news)
+              VAT, very weak credit, or a <em>cluster</em> of serious adverse news)
             </li>
           </ul>
         </article>

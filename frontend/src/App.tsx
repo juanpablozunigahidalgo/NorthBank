@@ -54,7 +54,7 @@ function verdictSub(decision: RiskDecision): string {
     case 'REJECTED':
       return 'Hard fail (e.g. bankruptcy, invalid tax registration, critical adverse media). Not a partner candidate in this draft.'
     case 'ESCALATE_TO_COMPLIANCE':
-      return 'Grey zone (e.g. PEP, mid credit, medium news). Compliance should clear before you progress.'
+      return 'Grey zone (e.g. mid credit, material news, or PEP with adverse conduct). Compliance should clear before you progress.'
   }
 }
 
